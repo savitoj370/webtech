@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator Result</title>
+</head>
+<body>
+	<?php
+	$num1 = $_POST['num1'];
+	$num2 = $_POST['num2'];
+	$operator = $_POST['operator'];
+	
+	if ($operator == '+') {
+		$result = $num1 + $num2;
+		echo "$num1 + $num2 = $result";
+	} elseif ($operator == '-') {
+		$result = $num1 - $num2;
+		echo "$num1 - $num2 = $result";
+	} elseif ($operator == '*') {
+		$result = $num1 * $num2;
+		echo "$num1 * $num2 = $result";
+	} elseif ($operator == '/') {
+		if ($num2 == 0) {
+			echo "Error: division by zero";
+		} else {
+			$result = $num1 / $num2;
+			echo "$num1 / $num2 = $result";
+		}
+	} else {
+		echo "Error: invalid operator";
+	}
+	?>
+</body>
+</html>
